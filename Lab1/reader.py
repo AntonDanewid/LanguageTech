@@ -29,22 +29,19 @@ def find_all_occurences(wordCandidate, files):
     word = p.match(wordCandidate).group()
     if word in index:
         return
-
-    fileDictionary = {}
+    file_dictionary = {}
     for file in files:
         li = list()
-        r"\brocket\b"
-
-        pattern = "\"\\b" + word + "\\b\""
+        pattern = "\\b" + word + "\\b"
         regex = re.compile(pattern, re.IGNORECASE)
         open_file = open(file, "r", encoding='utf-8')
         text = open_file.read()
         for m in regex.finditer(text):
-            # print(m.group())
             li.append(m.start())
-        fileDictionary[open_file.name] = li
-    index[word] = fileDictionary
-    print(index)
+        if len(li) is not 0:
+            file_dictionary[open_file.name] = li
+    index[word] = file_dictionary
+
 
 def main():
     files = get_files(".", "txt")
