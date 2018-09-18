@@ -69,7 +69,7 @@ def main():
     print(index["samlar"])
     print(filedict["nils.txt"]["nils"])
     for doc1 in filedict.keys():
-        for doc2 in filedict.kieys():
+        for doc2 in filedict.keys():
             print("The cosine between ", doc1, " and ", doc2, " ", calc_cosine_similarity(filedict[doc1], filedict[doc2]))
 
 
