@@ -1,2 +1,4 @@
 .idea/
 *.pdf
+*.conll
+ud-treebanks-v2.2
